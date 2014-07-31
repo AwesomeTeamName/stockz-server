@@ -4,8 +4,12 @@ server = StockzServer()
 
 @server.error_action
 def error(ex):
-	print(' - ' + repr(ex))
-	return 'An error occurred'
+	name = ex.__class__.__name__
+	message = ex.message
+	formatted = ('{0}: {1}').format(name, message)
+	print(' - ' + formatted)
+
+	return formatted
 
 @server.action('hello')
 def hello(sender, data):

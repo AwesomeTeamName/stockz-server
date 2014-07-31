@@ -139,7 +139,6 @@ class StockzServer():
 			if response is not None:
 				sock.sendall(response)
 		finally:
-
 			sock.close()
 
 	def run(self, host = '0.0.0.0', port = 1337):

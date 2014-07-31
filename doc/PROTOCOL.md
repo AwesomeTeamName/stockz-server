@@ -2,11 +2,11 @@
 **Maximum packet size**: 2048 bytes
 
 ## Format
-All requests are strings following the syntax `action sender args`.
+All requests are strings following the syntax `action sender data`.
 
-Both `action` and `sender` are required, whereas `args` can be omitted.
+Both `action` and `sender` are required, whereas `data` can be omitted.
 
-Neither `action` nor `sender` can contain spaces, but `args` may contain any number of spaces.
+Neither `action` nor `sender` can contain spaces, but `data` may contain any number of spaces.
 
 ### Examples
 	buy 01234567891 3 10

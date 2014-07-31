@@ -1,5 +1,5 @@
 import tools, socket, thread
-from errors import InvalidActionError
+from errors import StockzError, InvalidActionError
 
 class StockzServer():
 	"""A TCP server for routing actions to methods"""
@@ -135,7 +135,7 @@ class StockzServer():
 			if response is not None:
 				sock.sendall(response)
 
-		except Exception as ex:
+		except StockzError as ex:
 			response = self.call_error_action(ex)
 
 			# If there is a response, send it to the client

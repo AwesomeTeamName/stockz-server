@@ -118,6 +118,10 @@ class StockzServer():
 			if len(split) < 2:
 				raise InvalidActionError(None, 'missing sender or action')
 
+			# log if debug enabled
+			if self._debug:
+				print(' - ' + raw)
+
 			# action and sender are always the first two elements
 			action = split[0]
 			sender = split[1]
@@ -144,12 +148,17 @@ class StockzServer():
 		finally:
 			sock.close()
 
-	def run(self, host = '0.0.0.0', port = 1337):
+	def run(self, host = '127.0.0.1', port = 1337, debug = False):
 		if not isinstance(host, basestring):
 			raise TypeError('host must be a string')
 
 		if not isinstance(port, int):
 			raise TypeError('port must be an int')
+
+		if not isinstance(debug, bool):
+			raise TypeError('debug must be a bool')
+
+		self._debug = debug
 		
 		# Create and configure socket
 		self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

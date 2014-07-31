@@ -2,7 +2,10 @@ import tools, socket, thread
 from errors import InvalidActionError
 
 class StockzServer():
+	"""A TCP server for routing actions to methods"""
+
 	def __init__(self):
+		"""Create a StockzServer instance"""
 		self._actions = {}
 		self._error_action = None
 

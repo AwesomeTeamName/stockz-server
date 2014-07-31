@@ -1,7 +1,7 @@
-# stockz-server #
+# stockz-server
 Stock market simulator server
 
-## Setup ##
+## Setup
 1. Install `virtualenv`.
 
 		pip install virtualenv

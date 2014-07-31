@@ -15,5 +15,12 @@ def error(ex):
 def hello(sender, data):
 	return 'Hello, ' + sender
 
+@server.action('echo')
+def echo(sender, data):
+	if data is None:
+		return 'None'
+
+	return data
+
 if __name__ == '__main__':
 	server.run(host = '0.0.0.0', debug = True)

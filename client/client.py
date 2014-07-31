@@ -1,6 +1,8 @@
 import socket
 
 class StockzClient():
+	"""A client for StockzServer"""
+
 	def __init__(self, host = '0.0.0.0', port = 1337):
 		"""Create a StockzClient to connect to the provided address"""
 
